@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-sage: #A3B18A;
+  --color-olive: #588157;
+  --color-beige: #F6F1E9;
+  --color-off-white: #FAF9F6;
+  --color-terracotta: #D4A373;
+  --color-ink: #344E41;
+  
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Libre Baskerville", serif;
+  
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+  --radius-3xl: 32px;
+}
+
+@layer base {
+  body {
+    @apply bg-beige text-ink font-sans antialiased;
+  }
+}
+
+.glass {
+  @apply bg-white/60 backdrop-blur-[10px] border border-white/40;
+}
+
+.serif-italic {
+  @apply font-serif italic;
+}
+
+.tag-buy-now {
+  @apply bg-[#E9EDC9] text-olive;
+}
+
+.tag-later {
+  @apply bg-[#FEFAE0] text-[#B9936C];
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
