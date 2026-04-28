@@ -22,6 +22,8 @@ export default function App() {
     preferences: {
       accommodationType: '',
       budget: 1000,
+      currency: 'INR',
+      countryCode: 'IN',
       assistantName: 'Sage',
       assistantPersona: 'The Organizer'
     },
@@ -35,7 +37,10 @@ export default function App() {
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
     window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   const layout = getLayoutConfig(windowWidth);
@@ -141,6 +146,7 @@ export default function App() {
     });
   }, []);
 
+
   const renderStep = () => {
     switch (state.step) {
       case 'landing':
@@ -218,6 +224,7 @@ export default function App() {
           <ArrowLeft size={20} />
         </motion.button>
       )}
+
       {/* Persistent Sage Button */}
       {state.step === 'planner' && !isSageVisible && (
         <motion.button

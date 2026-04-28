@@ -23,6 +23,8 @@ export interface HomeItem {
 export interface UserPreferences {
   accommodationType: AccommodationType;
   budget: number;
+  currency: string;
+  countryCode: string;
   targetCity?: string;
   assistantName?: string;
   assistantPersona?: PersonaType;

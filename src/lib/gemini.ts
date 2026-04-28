@@ -16,9 +16,10 @@ export async function generateEssentials(
   city: string, 
   budget: number, 
   accommodationType: string,
+  currency: string = 'INR',
   persona: PersonaType = 'The Organizer'
 ): Promise<HomeItem[]> {
-  const prompt = `Generate a tailored home setup checklist for a ${accommodationType} in ${city} with a budget of ₹${budget}.
+  const prompt = `Generate a tailored home setup checklist for a ${accommodationType} in ${city} with a budget of ${currency} ${budget}.
   
   ADVENTURE SPECIFICS:
   - If "Shared Space" (PG/Co-living): Focus on personal room essentials, bedding, and laundry. Assume kitchen/fridge are shared unless specified.
@@ -27,7 +28,7 @@ export async function generateEssentials(
   
   CORE REQUIREMENTS:
   Focus on items needed within the first 48 hours for a functional, peaceful home. 
-  Include estimated costs in Indian Rupees (INR).
+  Include estimated costs in the local currency (${currency}).
   Categorize items significantly (Bedroom, Kitchen, Bathroom, Living Room, Essentials, Utility).
   
   SCHEMA VALUES:

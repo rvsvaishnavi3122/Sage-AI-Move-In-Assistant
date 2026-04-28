@@ -28,7 +28,7 @@ interface Theme {
 const THEME_MAP: Record<Exclude<AccommodationType, ''>, Theme[]> = {
   Studio: [
     {
-      id: 'pg-minimal',
+      id: 'studio-minimal',
       theme_name: 'Compact Minimal',
       icon: Maximize,
       color: 'bg-white border-white/40 text-ink/40',
@@ -36,53 +36,53 @@ const THEME_MAP: Record<Exclude<AccommodationType, ''>, Theme[]> = {
       designs: [
         {
           design_name: 'The Productivity Pod',
-          image_prompt: 'A cozy minimalist PG room with a foldable desk and single bed.',
+          image_prompt: 'A cozy minimalist studio apartment with a foldable desk and sleek furniture.',
           image_url: 'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&q=80&w=800',
-          pinterest_url: 'https://www.pinterest.com/search/pins/?q=minimalist%20pg%20room%20setup',
+          pinterest_url: 'https://www.pinterest.com/search/pins/?q=minimalist%20studio%20apartment%20setup',
           items_required: ['Foldable Laptop Table', 'Slim Floor Lamp', 'Floating Wall Shelf']
         },
         {
           design_name: 'Zen Corner',
-          image_prompt: 'A tiny PG room corner with floor cushion and indoor plant.',
+          image_prompt: 'A tiny studio corner with floor cushion and indoor plant for relaxation.',
           image_url: 'https://images.unsplash.com/photo-1545241047-6083a3684587?auto=format&fit=crop&q=80&w=800',
-          pinterest_url: 'https://www.pinterest.com/search/pins/?q=small%20room%20zen%20corner',
+          pinterest_url: 'https://www.pinterest.com/search/pins/?q=studio%20apartment%20zen%20corner',
           items_required: ['Floor Cushion', 'Snake Plant', 'Fairy Lights']
         },
         {
           design_name: 'Monochrome Haven',
-          image_prompt: 'A PG room with grey and white tones and sleek setup.',
+          image_prompt: 'A studio apartment with grey and white tones and sleek multifunctional setup.',
           image_url: 'https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&q=80&w=800',
-          pinterest_url: 'https://www.pinterest.com/search/pins/?q=black%20and%20white%20room%20decor',
+          pinterest_url: 'https://www.pinterest.com/search/pins/?q=modern%20studio%20apartment%20decor',
           items_required: ['Grey Bedding Set', 'Mesh Desk Organizer', 'Black Command Hooks']
         }
       ]
     },
     {
-      id: 'pg-warm',
+      id: 'studio-warm',
       theme_name: 'Cozy Personal',
       icon: Sparkles,
       color: 'bg-terracotta/10 text-terracotta',
-      description: 'Adding warmth and personality to a standard PG room.',
+      description: 'Adding warmth and personality to a functional studio space.',
       designs: [
         {
           design_name: 'Boho Vibe',
-          image_prompt: 'A PG room with macrame hangings and warm knit blankets.',
+          image_prompt: 'A studio with macrame hangings and warm knit blankets.',
           image_url: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=800',
-          pinterest_url: 'https://www.pinterest.com/search/pins/?q=boho%20pg%20room%20decor',
+          pinterest_url: 'https://www.pinterest.com/search/pins/?q=boho%20studio%20apartment%20decor',
           items_required: ['Macrame Wall Hanging', 'Knit Throw', 'Photo Grid Clip']
         },
         {
           design_name: 'Soft Glow',
-          image_prompt: 'A room filled with string lights and velvet pillows.',
+          image_prompt: 'A studio apartment filled with string lights and velvet pillows.',
           image_url: 'https://images.unsplash.com/photo-1554995207-c18c203602cb?auto=format&fit=crop&q=80&w=800',
-          pinterest_url: 'https://www.pinterest.com/search/pins/?q=room%20fairy%20lights%20setup',
+          pinterest_url: 'https://www.pinterest.com/search/pins/?q=studio%20fairy%20lights%20setup',
           items_required: ['Warm String Lights', 'Bedside Lamp', 'Velvet Pillows']
         },
         {
           design_name: 'Rustic Touch',
-          image_prompt: 'A PG room with wooden crates and vintage-style posters.',
+          image_prompt: 'A studio with wooden crates and vintage-style posters.',
           image_url: 'https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&q=80&w=800',
-          pinterest_url: 'https://www.pinterest.com/search/pins/?q=rustic%20small%20room%20decor',
+          pinterest_url: 'https://www.pinterest.com/search/pins/?q=rustic%20studio%20apartment%20decor',
           items_required: ['Wooden Storage Box', 'Vintage Poster', 'Jute Basket']
         }
       ]
@@ -214,12 +214,57 @@ const THEME_MAP: Record<Exclude<AccommodationType, ''>, Theme[]> = {
   ],
   '2BHK+': [
     {
-      id: 'flat-modern',
-      theme_name: 'Spacious Modern',
+      id: 'flat-luxury',
+      theme_name: 'Modern Luxury',
       icon: Home,
       color: 'bg-ink/10 text-ink',
-      description: 'Full-scale setups for larger apartments.',
-      designs: []
+      description: 'Sophisticated setups with high-end finishes and spacious layouts.',
+      designs: [
+        {
+          design_name: 'Grand Living',
+          image_prompt: 'A large living room with designer furniture, artwork, and premium lighting.',
+          image_url: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=800',
+          pinterest_url: 'https://www.pinterest.com/search/pins/?q=luxury%20modern%20living%20room',
+          items_required: ['Sectional Leather Sofa', 'Floor-to-Ceiling Shelving', 'Smart Indirect Lighting']
+        },
+        {
+          design_name: 'Master Retreat',
+          image_prompt: 'A luxurious master bedroom with walk-in closet vibes and king bed.',
+          image_url: 'https://images.unsplash.com/photo-1560185127-6ed189bf02f4?auto=format&fit=crop&q=80&w=800',
+          pinterest_url: 'https://www.pinterest.com/search/pins/?q=luxury%20master%20bedroom%20design',
+          items_required: ['King Sized Bed', 'Plush Area Rug', 'Smart Bedside Lamps']
+        },
+        {
+          design_name: 'Chef\'s Kitchen',
+          image_prompt: 'A large open kitchen with advanced appliances and island.',
+          image_url: 'https://images.unsplash.com/photo-1556912177-c54030639a03?auto=format&fit=crop&q=80&w=800',
+          pinterest_url: 'https://www.pinterest.com/search/pins/?q=modern%20chef%20kitchen%20luxury',
+          items_required: ['Kitchen Island Stools', 'Double Door Fridge', 'Built-in Microwave']
+        }
+      ]
+    },
+    {
+      id: 'flat-family',
+      theme_name: 'Family Heritage',
+      icon: Users,
+      color: 'bg-sage/20 text-olive',
+      description: 'Warm, durable, and inviting spaces for the entire family.',
+      designs: [
+        {
+          design_name: 'Family Hub',
+          image_prompt: 'A warm living room with a large comfortable sofa and display units for photos.',
+          image_url: 'https://images.unsplash.com/photo-1517705008128-361805f42e86?auto=format&fit=crop&q=80&w=800',
+          pinterest_url: 'https://www.pinterest.com/search/pins/?q=family%20friendly%20living%20room',
+          items_required: ['Large 5-Seater Sofa', 'Family Photo Gallery Wall', 'Hidden Storage Ottomans']
+        },
+        {
+          design_name: 'Kid\'s Zone / Guest Room',
+          image_prompt: 'A versatile second bedroom with bright accents and storage.',
+          image_url: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&q=80&w=800',
+          pinterest_url: 'https://www.pinterest.com/search/pins/?q=kids%20bedroom%20guest%20room%20combo',
+          items_required: ['Twin Bed with Trundle', 'Toy/Linen Storage Cubes', 'Colorful Study Lamp']
+        }
+      ]
     }
   ],
 };

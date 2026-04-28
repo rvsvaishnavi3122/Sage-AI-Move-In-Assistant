@@ -5,9 +5,10 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Home, UserPlus, Building2, IndianRupee, Loader2, Sparkles, Wand2, MapPin, Maximize, Users, Calendar } from 'lucide-react';
+import { Home, UserPlus, Building2, IndianRupee, Banknote, Loader2, Sparkles, Wand2, MapPin, Maximize, Users, Calendar } from 'lucide-react';
 import { AccommodationType, HomeItem, UserPreferences } from '../types';
 import { generateEssentials } from '../lib/gemini';
+import { CURRENCY_SYMBOLS } from '../constants';
 
 interface Props {
   preferences: UserPreferences;
@@ -24,11 +25,12 @@ const ACCOMMODATIONS: { type: AccommodationType; label: string; icon: any; desc:
 export default function EssentialsForm({ preferences, onComplete }: Props) {
   const [prefs, setPrefs] = useState<UserPreferences>(preferences);
   const [isGenerating, setIsGenerating] = useState(false);
+  const currencySymbol = CURRENCY_SYMBOLS[prefs.currency] || prefs.currency;
 
   const [step, setStep] = useState(0);
   const steps = [
     "Analyzing accommodation footprint...",
-    "Optimizing for ₹" + prefs.budget + " budget...",
+    "Optimizing for " + currencySymbol + prefs.budget + " budget...",
     "Finding local essentials in " + (prefs.targetCity || "your city") + "...",
     "Curating your personalized 48-hour plan..."
   ];
@@ -43,9 +45,10 @@ export default function EssentialsForm({ preferences, onComplete }: Props) {
 
     try {
       const items = await generateEssentials(
-        prefs.accommodationType, 
+        prefs.targetCity || "Unknown City", 
         prefs.budget, 
-        prefs.targetCity,
+        prefs.accommodationType,
+        prefs.currency,
         prefs.assistantPersona
       );
       clearInterval(interval);
@@ -122,9 +125,9 @@ export default function EssentialsForm({ preferences, onComplete }: Props) {
       </div>
 
       <div className="space-y-6">
-        <label className="text-sm font-semibold uppercase tracking-wider text-ink/40 block ml-2">What is your Target Budget? (₹)</label>
+        <label className="text-sm font-semibold uppercase tracking-wider text-ink/40 block ml-2">What is your Target Budget? ({currencySymbol})</label>
         <div className="relative group">
-          <IndianRupee className="absolute left-5 top-1/2 -translate-y-1/2 text-olive font-semibold" size={20} />
+          {prefs.currency === 'INR' ? <IndianRupee className="absolute left-5 top-1/2 -translate-y-1/2 text-olive font-semibold" size={20} /> : <Banknote className="absolute left-5 top-1/2 -translate-y-1/2 text-olive font-semibold" size={20} />}
           <input
             type="number"
             value={prefs.budget || ''}

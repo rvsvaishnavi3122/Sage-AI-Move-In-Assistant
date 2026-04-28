@@ -5,9 +5,10 @@
 
 import { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { CheckCircle2, Circle, IndianRupee, LayoutGrid, List, Plus, Wallet, ShoppingBag, Eye, Trash2, MapPin, Edit2, X, Sparkles, TrendingUp, AlertCircle, ArrowRight } from 'lucide-react';
+import { CheckCircle2, Circle, IndianRupee, Banknote, LayoutGrid, List, Plus, Wallet, ShoppingBag, Eye, Trash2, MapPin, Edit2, X, Sparkles, TrendingUp, AlertCircle, ArrowRight } from 'lucide-react';
 import { AppState, HomeItem } from '../types';
 import LocalResources from './LocalResources';
+import { CURRENCY_SYMBOLS } from '../constants';
 
 interface Props {
   state: AppState;
@@ -17,11 +18,12 @@ interface Props {
   onUpdateBudget: (budget: number) => void;
 }
 
-function ListItem({ item, toggleComplete, startEdit, deleteItem }: { 
+function ListItem({ item, toggleComplete, startEdit, deleteItem, currencySymbol }: { 
   item: HomeItem, 
   toggleComplete: (id: string) => void, 
   startEdit: (item: HomeItem) => void, 
-  deleteItem: (id: string) => void 
+  deleteItem: (id: string) => void,
+  currencySymbol: string
 }) {
   return (
     <motion.div 
@@ -55,7 +57,7 @@ function ListItem({ item, toggleComplete, startEdit, deleteItem }: {
       </div>
 
       <div className="flex flex-col items-end gap-2 shrink-0">
-        <span className="text-xs font-bold text-ink/40 italic">₹{item.estimatedCost}</span>
+        <span className="text-xs font-bold text-ink/40 italic">{currencySymbol}{item.estimatedCost}</span>
         <button 
           onClick={() => deleteItem(item.id)}
           className="p-1 text-ink/10 hover:text-terracotta transition-colors"
@@ -75,6 +77,7 @@ export default function Planner({ state, onUpdateItems, onToggleComplete, onTogg
   const [itemCategoryInput, setItemCategoryInput] = useState<HomeItem['category']>('Bedroom');
   const [isEditingBudget, setIsEditingBudget] = useState(false);
   const [tempBudget, setTempBudget] = useState(state.preferences.budget.toString());
+  const currencySymbol = CURRENCY_SYMBOLS[state.preferences.currency] || state.preferences.currency;
 
   const stats = useMemo(() => {
     const totalSetupCost = state.items.reduce((acc, item) => acc + item.estimatedCost, 0);
@@ -232,7 +235,7 @@ export default function Planner({ state, onUpdateItems, onToggleComplete, onTogg
               </div>
 
               <div className="relative">
-                <IndianRupee className="absolute left-4 top-1/2 -translate-y-1/2 text-olive" size={20} />
+                {state.preferences.currency === 'INR' ? <IndianRupee className="absolute left-4 top-1/2 -translate-y-1/2 text-olive" size={20} /> : <Banknote className="absolute left-4 top-1/2 -translate-y-1/2 text-olive" size={20} />}
                 <input 
                   autoFocus
                   type="number"
@@ -344,7 +347,7 @@ export default function Planner({ state, onUpdateItems, onToggleComplete, onTogg
               {stats.dailyFocus.length > 0 ? (
                 <div className="space-y-3">
                   {stats.dailyFocus.map(item => (
-                    <ListItem key={item.id} item={item} toggleComplete={toggleComplete} startEdit={startEdit} deleteItem={deleteItem} />
+                    <ListItem key={item.id} item={item} toggleComplete={toggleComplete} startEdit={startEdit} deleteItem={deleteItem} currencySymbol={currencySymbol} />
                   ))}
                 </div>
               ) : (
@@ -366,7 +369,7 @@ export default function Planner({ state, onUpdateItems, onToggleComplete, onTogg
                 </div>
                 <div className="space-y-3 bg-white/30 p-4 rounded-[32px] border border-white/20">
                   {stats.lookingAhead.map(item => (
-                    <ListItem key={item.id} item={item} toggleComplete={toggleComplete} startEdit={startEdit} deleteItem={deleteItem} />
+                    <ListItem key={item.id} item={item} toggleComplete={toggleComplete} startEdit={startEdit} deleteItem={deleteItem} currencySymbol={currencySymbol} />
                   ))}
                   <button 
                     onClick={() => setView('all')}
@@ -386,7 +389,7 @@ export default function Planner({ state, onUpdateItems, onToggleComplete, onTogg
                   </div>
                   <div>
                     <p className="text-[10px] font-bold uppercase tracking-widest text-ink/40">Next Big Spend</p>
-                    <p className="text-sm font-serif font-bold italic text-ink mt-1">₹{Math.max(...state.items.filter(i => !i.completed).map(i => i.estimatedCost), 0).toLocaleString()}</p>
+                    <p className="text-sm font-serif font-bold italic text-ink mt-1">{currencySymbol}{Math.max(...state.items.filter(i => !i.completed).map(i => i.estimatedCost), 0).toLocaleString()}</p>
                   </div>
                </div>
                <div className="bg-white/40 rounded-3xl p-5 border border-white/60 shadow-sm flex flex-col gap-3">
@@ -425,7 +428,7 @@ export default function Planner({ state, onUpdateItems, onToggleComplete, onTogg
                 </h3>
                 <div className="space-y-4">
                   {state.items.map(item => (
-                    <ListItem key={item.id} item={item} toggleComplete={toggleComplete} startEdit={startEdit} deleteItem={deleteItem} />
+                    <ListItem key={item.id} item={item} toggleComplete={toggleComplete} startEdit={startEdit} deleteItem={deleteItem} currencySymbol={currencySymbol} />
                   ))}
                 </div>
               </div>
@@ -441,7 +444,7 @@ export default function Planner({ state, onUpdateItems, onToggleComplete, onTogg
                     </h3>
                     <div className="space-y-4">
                       {catItems.map(item => (
-                        <ListItem key={item.id} item={item} toggleComplete={toggleComplete} startEdit={startEdit} deleteItem={deleteItem} />
+                        <ListItem key={item.id} item={item} toggleComplete={toggleComplete} startEdit={startEdit} deleteItem={deleteItem} currencySymbol={currencySymbol} />
                       ))}
                     </div>
                   </div>
@@ -459,7 +462,7 @@ export default function Planner({ state, onUpdateItems, onToggleComplete, onTogg
                       </h3>
                       <div className="space-y-4">
                         {prioItems.map(item => (
-                          <ListItem key={item.id} item={item} toggleComplete={toggleComplete} startEdit={startEdit} deleteItem={deleteItem} />
+                          <ListItem key={item.id} item={item} toggleComplete={toggleComplete} startEdit={startEdit} deleteItem={deleteItem} currencySymbol={currencySymbol} />
                         ))}
                       </div>
                     </div>

@@ -5,8 +5,9 @@
 
 import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { IndianRupee, TrendingDown, Wallet, ShoppingBag, CheckCircle2, Circle, AlertCircle, Edit2, X } from 'lucide-react';
+import { IndianRupee, TrendingDown, Wallet, ShoppingBag, CheckCircle2, Circle, AlertCircle, Edit2, X, Banknote } from 'lucide-react';
 import { AppState, HomeItem } from '../types';
+import { CURRENCY_SYMBOLS } from '../constants';
 
 interface Props {
   state: AppState;
@@ -18,6 +19,7 @@ export default function BudgetScreen({ state, onUpdateItems, onUpdateBudget }: P
   const [editingItem, setEditingItem] = useState<string | null>(null);
   const [isEditingBudget, setIsEditingBudget] = useState(false);
   const [tempBudget, setTempBudget] = useState(state.preferences.budget.toString());
+  const currencySymbol = CURRENCY_SYMBOLS[state.preferences.currency] || state.preferences.currency;
 
   const stats = useMemo(() => {
     const totalSetupCost = state.items.reduce((acc, item) => acc + item.estimatedCost, 0);
@@ -77,7 +79,7 @@ export default function BudgetScreen({ state, onUpdateItems, onUpdateBudget }: P
             <div className="flex justify-between items-start">
               <div className="space-y-1">
                 <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/30">Total Actual Spend</p>
-                <h3 className="text-5xl font-serif font-bold italic tracking-tight">₹{stats.actualSpend.toLocaleString()}</h3>
+                <h3 className="text-5xl font-serif font-bold italic tracking-tight">{currencySymbol}{stats.actualSpend.toLocaleString()}</h3>
               </div>
               <div className="bg-white/10 p-4 rounded-[28px] backdrop-blur-md border border-white/10">
                 <Wallet size={28} />
@@ -204,12 +206,12 @@ export default function BudgetScreen({ state, onUpdateItems, onUpdateBudget }: P
               </div>
 
               <div className="text-right" onClick={() => setEditingItem(item.id)}>
-                <p className="text-sm font-bold text-ink">₹{(item.actualCost || item.estimatedCost).toLocaleString()}</p>
+                <p className="text-sm font-bold text-ink">{currencySymbol}{(item.actualCost || item.estimatedCost).toLocaleString()}</p>
                 {item.actualCost && item.actualCost < item.estimatedCost && (
-                  <p className="text-[9px] text-sage font-bold uppercase">Saved ₹{item.estimatedCost - item.actualCost}</p>
+                  <p className="text-[9px] text-sage font-bold uppercase">Saved {currencySymbol}{item.estimatedCost - item.actualCost}</p>
                 )}
                 {item.actualCost && item.actualCost > item.estimatedCost && (
-                  <p className="text-[9px] text-terracotta font-bold uppercase">Over ₹{item.actualCost - item.estimatedCost}</p>
+                  <p className="text-[9px] text-terracotta font-bold uppercase">Over {currencySymbol}{item.actualCost - item.estimatedCost}</p>
                 )}
               </div>
             </motion.div>
