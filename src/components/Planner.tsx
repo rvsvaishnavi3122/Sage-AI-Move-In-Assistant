@@ -150,7 +150,12 @@ export default function Planner({ state, onUpdateItems, onToggleComplete, onTogg
     onUpdateItems(state.items.filter(item => item.id !== id));
   };
 
-  const categories = Array.from(new Set(state.items.map(i => i.category)));
+  const categories = useMemo(() => {
+    const itemCats = state.items.map(i => i.category);
+    const allCats = ['Bedroom', 'Kitchen', 'Bathroom', 'Living Room', 'Essentials', 'Utility'] as const;
+    // @ts-ignore - Handle mixed types if any
+    return Array.from(new Set([...allCats, ...itemCats]));
+  }, [state.items]);
 
   return (
     <div className="space-y-8 pb-24">

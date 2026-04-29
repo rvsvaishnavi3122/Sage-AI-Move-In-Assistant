@@ -27,7 +27,11 @@ export default function App() {
       assistantName: 'Sage',
       assistantPersona: 'The Organizer'
     },
-    items: [],
+    items: [
+      { id: 'base-1', name: 'Mineral Water (Pack)', category: 'Essentials', priority: 'Critical', urgency: 10, estimatedCost: 100, completed: false, reasoning: 'Immediate hydration needed.' },
+      { id: 'base-2', name: 'Basic Toiletries', category: 'Bathroom', priority: 'Critical', urgency: 10, estimatedCost: 300, completed: false, reasoning: 'For the first morning.' },
+      { id: 'base-3', name: 'Cleaning Kit', category: 'Utility', priority: 'Must-have', urgency: 9, estimatedCost: 400, completed: false, reasoning: 'Clear the room before unpacking.' }
+    ],
   });
 
   const [activeView, setActiveView] = useState<'planner' | 'budget' | 'aesthetics'>('planner');
@@ -54,23 +58,21 @@ export default function App() {
         'setup': 'planner',
       };
 
-      let step = transitions[prev.step] || prev.step;
+      const newStep = transitions[prev.step] || prev.step;
       
       const persona = updates?.preferences?.assistantPersona || prev.preferences.assistantPersona;
 
-      // Conditional skips for personas
-      if (prev.step === 'assistant_setup' && (persona === 'The Budget Master' || persona === 'The Decorator')) {
-        step = 'planner';
+      // Handle view initialization when arriving at planner
+      if (newStep === 'planner') {
         if (persona === 'The Budget Master') setActiveView('budget');
         else if (persona === 'The Decorator') setActiveView('aesthetics');
-      } else if (prev.step === 'assistant_setup' && persona === 'The Organizer') {
-        setActiveView('planner');
+        else setActiveView('planner');
       }
 
       return { 
         ...prev, 
         ...updates, 
-        step 
+        step: newStep 
       };
     });
   }, []);

@@ -37,21 +37,21 @@ const THEME_MAP: Record<Exclude<AccommodationType, ''>, Theme[]> = {
         {
           design_name: 'The Productivity Pod',
           image_prompt: 'A cozy minimalist studio apartment with a foldable desk and sleek furniture.',
-          image_url: 'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&q=80&w=800',
+          image_url: 'https://picsum.photos/seed/studio1/800/600',
           pinterest_url: 'https://www.pinterest.com/search/pins/?q=minimalist%20studio%20apartment%20setup',
           items_required: ['Foldable Laptop Table', 'Slim Floor Lamp', 'Floating Wall Shelf']
         },
         {
           design_name: 'Zen Corner',
           image_prompt: 'A tiny studio corner with floor cushion and indoor plant for relaxation.',
-          image_url: 'https://images.unsplash.com/photo-1545241047-6083a3684587?auto=format&fit=crop&q=80&w=800',
+          image_url: 'https://picsum.photos/seed/studio2/800/600',
           pinterest_url: 'https://www.pinterest.com/search/pins/?q=studio%20apartment%20zen%20corner',
           items_required: ['Floor Cushion', 'Snake Plant', 'Fairy Lights']
         },
         {
           design_name: 'Monochrome Haven',
           image_prompt: 'A studio apartment with grey and white tones and sleek multifunctional setup.',
-          image_url: 'https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&q=80&w=800',
+          image_url: 'https://picsum.photos/seed/studio3/800/600',
           pinterest_url: 'https://www.pinterest.com/search/pins/?q=modern%20studio%20apartment%20decor',
           items_required: ['Grey Bedding Set', 'Mesh Desk Organizer', 'Black Command Hooks']
         }
@@ -67,21 +67,21 @@ const THEME_MAP: Record<Exclude<AccommodationType, ''>, Theme[]> = {
         {
           design_name: 'Boho Vibe',
           image_prompt: 'A studio with macrame hangings and warm knit blankets.',
-          image_url: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=800',
+          image_url: 'https://picsum.photos/seed/studio4/800/600',
           pinterest_url: 'https://www.pinterest.com/search/pins/?q=boho%20studio%20apartment%20decor',
           items_required: ['Macrame Wall Hanging', 'Knit Throw', 'Photo Grid Clip']
         },
         {
           design_name: 'Soft Glow',
           image_prompt: 'A studio apartment filled with string lights and velvet pillows.',
-          image_url: 'https://images.unsplash.com/photo-1554995207-c18c203602cb?auto=format&fit=crop&q=80&w=800',
+          image_url: 'https://picsum.photos/seed/studio5/800/600',
           pinterest_url: 'https://www.pinterest.com/search/pins/?q=studio%20fairy%20lights%20setup',
           items_required: ['Warm String Lights', 'Bedside Lamp', 'Velvet Pillows']
         },
         {
           design_name: 'Rustic Touch',
           image_prompt: 'A studio with wooden crates and vintage-style posters.',
-          image_url: 'https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&q=80&w=800',
+          image_url: 'https://picsum.photos/seed/studio6/800/600',
           pinterest_url: 'https://www.pinterest.com/search/pins/?q=rustic%20studio%20apartment%20decor',
           items_required: ['Wooden Storage Box', 'Vintage Poster', 'Jute Basket']
         }
@@ -99,21 +99,21 @@ const THEME_MAP: Record<Exclude<AccommodationType, ''>, Theme[]> = {
         {
           design_name: 'Urban Loft',
           image_prompt: 'A living room in a flat with leather sofa and metal table.',
-          image_url: 'https://images.unsplash.com/photo-1505691722718-250393ce8029?auto=format&fit=crop&q=80&w=800',
+          image_url: 'https://picsum.photos/seed/flat1/800/600',
           pinterest_url: 'https://www.pinterest.com/search/pins/?q=urban%20loft%20living%20room',
           items_required: ['Leather Sofa', 'Metal Frame Coffee Table', 'Large Area Rug']
         },
         {
           design_name: 'Concrete Dream',
           image_prompt: 'A kitchen-dining area with bar stools and minimalist table.',
-          image_url: 'https://images.unsplash.com/photo-1556911223-e1520411a070?auto=format&fit=crop&q=80&w=800',
+          image_url: 'https://picsum.photos/seed/flat2/800/600',
           pinterest_url: 'https://www.pinterest.com/search/pins/?q=modern%20industrial%20kitchen',
           items_required: ['Bar Stools', '6-Seater Dining Table', 'Pendant Lighting']
         },
         {
           design_name: 'Glass & Steel',
           image_prompt: 'A bedroom with a king bed and blackout curtains.',
-          image_url: 'https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&q=80&w=800',
+          image_url: 'https://picsum.photos/seed/flat3/800/600',
           pinterest_url: 'https://www.pinterest.com/search/pins/?q=modern%20minimalist%20bedroom',
           items_required: ['King Bed Frame', 'Full Length Mirror', 'Blackout Curtains']
         }
@@ -129,21 +129,21 @@ const THEME_MAP: Record<Exclude<AccommodationType, ''>, Theme[]> = {
         {
           design_name: 'Light Living',
           image_prompt: 'A living room with light wood furniture and many plants.',
-          image_url: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&q=80&w=800',
+          image_url: 'https://picsum.photos/seed/flat4/800/600',
           pinterest_url: 'https://www.pinterest.com/search/pins/?q=scandinavian%20living%20room%20plants',
           items_required: ['Oak TV Unit', 'Light Grey L-Sofa', 'Potted Monstera']
         },
         {
           design_name: 'Functional Kitchen',
           image_prompt: 'A clean kitchen setup with white cabinets.',
-          image_url: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&q=80&w=800',
+          image_url: 'https://picsum.photos/seed/flat5/800/600',
           pinterest_url: 'https://www.pinterest.com/search/pins/?q=minimalist%20white%20kitchen%20ideas',
           items_required: ['Kitchen Utility Cart', 'Magnetic Knife Strip', 'Herb Pot Station']
         },
         {
           design_name: 'Serene Bed',
           image_prompt: 'A bright bedroom with cotton duvet and natural light.',
-          image_url: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&q=80&w=800',
+          image_url: 'https://picsum.photos/seed/flat6/800/600',
           pinterest_url: 'https://www.pinterest.com/search/pins/?q=bright%20scandinavian%20bedroom',
           items_required: ['Plywood Bedside Table', 'Cotton Duvet Set', 'Woven Laundry Hamper']
         }
@@ -161,21 +161,21 @@ const THEME_MAP: Record<Exclude<AccommodationType, ''>, Theme[]> = {
         {
           design_name: 'My Peaceful Pad',
           image_prompt: 'A private room with customized storage and a reading nook.',
-          image_url: 'https://images.unsplash.com/photo-1544457070-4cd773b4d71e?auto=format&fit=crop&q=80&w=800',
+          image_url: 'https://picsum.photos/seed/shared1/800/600',
           pinterest_url: 'https://www.pinterest.com/search/pins/?q=private%20bedroom%20shared%20apartment',
           items_required: ['Armchair', 'Bookshelf', 'Curtain Room Divider']
         },
         {
           design_name: 'Shared Harmony',
           image_prompt: 'A shared living area with roommate-friendly organization.',
-          image_url: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&q=80&w=800',
+          image_url: 'https://picsum.photos/seed/shared2/800/600',
           pinterest_url: 'https://www.pinterest.com/search/pins/?q=shared%20living%20room%20organization',
           items_required: ['Modular Sofa', 'Labeled Bin Organizer', 'Common Area Clock']
         },
         {
           design_name: 'Utility Smart',
           image_prompt: 'A balcony with a compact laundry station.',
-          image_url: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&q=80&w=800',
+          image_url: 'https://picsum.photos/seed/shared3/800/600',
           pinterest_url: 'https://www.pinterest.com/search/pins/?q=balcony%20laundry%20station%20ideas',
           items_required: ['Foldable Drying Rack', 'Shoe Cabinet', 'Balcony Chairs']
         }
@@ -191,21 +191,21 @@ const THEME_MAP: Record<Exclude<AccommodationType, ''>, Theme[]> = {
         {
           design_name: 'The Gaming Zone',
           image_prompt: 'A shared living room with modular floor seating.',
-          image_url: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=800',
+          image_url: 'https://picsum.photos/seed/shared4/800/600',
           pinterest_url: 'https://www.pinterest.com/search/pins/?q=shared%20gaming%20room%20projector',
           items_required: ['Portable Projector', 'Bean Bags (Set of 3)', 'Low Height Table']
         },
         {
           design_name: 'Kitchen Hub',
           image_prompt: 'A shared kitchen with breakfast bar stools.',
-          image_url: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&q=80&w=800',
+          image_url: 'https://picsum.photos/seed/shared5/800/600',
           pinterest_url: 'https://www.pinterest.com/search/pins/?q=shared%20kitchen%20breakfast%20bar',
           items_required: ['Wooden Stools', 'Shared Kettle', 'Wall Mounted Chalkboard']
         },
         {
           design_name: 'Entryway Efficiency',
           image_prompt: 'A shared entryway with many hooks and shoe rack.',
-          image_url: 'https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&q=80&w=800',
+          image_url: 'https://picsum.photos/seed/shared6/800/600',
           pinterest_url: 'https://www.pinterest.com/search/pins/?q=shared%20entryway%20organization',
           items_required: ['Multi-tier Shoe Rack', 'Coat Hooks', 'Key Holder']
         }
@@ -223,21 +223,21 @@ const THEME_MAP: Record<Exclude<AccommodationType, ''>, Theme[]> = {
         {
           design_name: 'Grand Living',
           image_prompt: 'A large living room with designer furniture, artwork, and premium lighting.',
-          image_url: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=800',
+          image_url: 'https://picsum.photos/seed/luxury1/800/600',
           pinterest_url: 'https://www.pinterest.com/search/pins/?q=luxury%20modern%20living%20room',
           items_required: ['Sectional Leather Sofa', 'Floor-to-Ceiling Shelving', 'Smart Indirect Lighting']
         },
         {
           design_name: 'Master Retreat',
           image_prompt: 'A luxurious master bedroom with walk-in closet vibes and king bed.',
-          image_url: 'https://images.unsplash.com/photo-1560185127-6ed189bf02f4?auto=format&fit=crop&q=80&w=800',
+          image_url: 'https://picsum.photos/seed/luxury2/800/600',
           pinterest_url: 'https://www.pinterest.com/search/pins/?q=luxury%20master%20bedroom%20design',
           items_required: ['King Sized Bed', 'Plush Area Rug', 'Smart Bedside Lamps']
         },
         {
           design_name: 'Chef\'s Kitchen',
           image_prompt: 'A large open kitchen with advanced appliances and island.',
-          image_url: 'https://images.unsplash.com/photo-1556912177-c54030639a03?auto=format&fit=crop&q=80&w=800',
+          image_url: 'https://picsum.photos/seed/luxury3/800/600',
           pinterest_url: 'https://www.pinterest.com/search/pins/?q=modern%20chef%20kitchen%20luxury',
           items_required: ['Kitchen Island Stools', 'Double Door Fridge', 'Built-in Microwave']
         }
@@ -253,14 +253,14 @@ const THEME_MAP: Record<Exclude<AccommodationType, ''>, Theme[]> = {
         {
           design_name: 'Family Hub',
           image_prompt: 'A warm living room with a large comfortable sofa and display units for photos.',
-          image_url: 'https://images.unsplash.com/photo-1517705008128-361805f42e86?auto=format&fit=crop&q=80&w=800',
+          image_url: 'https://picsum.photos/seed/family1/800/600',
           pinterest_url: 'https://www.pinterest.com/search/pins/?q=family%20friendly%20living%20room',
           items_required: ['Large 5-Seater Sofa', 'Family Photo Gallery Wall', 'Hidden Storage Ottomans']
         },
         {
           design_name: 'Kid\'s Zone / Guest Room',
           image_prompt: 'A versatile second bedroom with bright accents and storage.',
-          image_url: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&q=80&w=800',
+          image_url: 'https://picsum.photos/seed/family2/800/600',
           pinterest_url: 'https://www.pinterest.com/search/pins/?q=kids%20bedroom%20guest%20room%20combo',
           items_required: ['Twin Bed with Trundle', 'Toy/Linen Storage Cubes', 'Colorful Study Lamp']
         }
@@ -310,28 +310,28 @@ export default function AestheticInspiration({ state, onUpdateItems }: Props) {
         title: 'Shared Space', 
         subtitle: 'PG / Co-living', 
         icon: Maximize, 
-        img: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&q=80&w=800' 
+        img: 'https://picsum.photos/seed/setup1/800/600' 
       },
       { 
         id: 'Studio', 
         title: 'Studio', 
         subtitle: 'Minimalist Flat', 
         icon: Building2, 
-        img: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&q=80&w=800' 
+        img: 'https://picsum.photos/seed/setup2/800/600' 
       },
       { 
         id: '1BHK', 
         title: '1BHK', 
         subtitle: 'Your Own Place', 
         icon: Home, 
-        img: 'https://images.unsplash.com/photo-1505691722718-250393ce8029?auto=format&fit=crop&q=80&w=800' 
+        img: 'https://picsum.photos/seed/setup3/800/600' 
       },
       { 
         id: '2BHK+', 
         title: '2BHK+', 
         subtitle: 'Spacious Life', 
         icon: Users, 
-        img: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&q=80&w=800' 
+        img: 'https://picsum.photos/seed/setup4/800/600' 
       },
     ] as const;
 
