@@ -58,9 +58,14 @@ export default function App() {
         'setup': 'planner',
       };
 
-      const newStep = transitions[prev.step] || prev.step;
+      let newStep = transitions[prev.step] || prev.step;
       
       const persona = updates?.preferences?.assistantPersona || prev.preferences.assistantPersona;
+
+      // Skip chat and setup for specialized personas
+      if (prev.step === 'assistant_setup' && persona !== 'The Organizer') {
+        newStep = 'planner';
+      }
 
       // Handle view initialization when arriving at planner
       if (newStep === 'planner') {

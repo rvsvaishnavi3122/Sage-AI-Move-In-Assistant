@@ -64,7 +64,12 @@ export default function AssistantSetup({ onComplete }: Props) {
           {PERSONAS.map((p) => (
             <button
               key={p.type}
-              onClick={() => setSelectedPersona(p.type)}
+              onClick={() => {
+                setSelectedPersona(p.type);
+                if (p.type !== 'The Organizer') {
+                  onComplete(name, p.type);
+                }
+              }}
               className={`w-full flex items-start gap-5 p-5 rounded-3xl transition-all border-2 text-left group ${
                 selectedPersona === p.type 
                 ? 'bg-sage/10 border-olive shadow-md' 
